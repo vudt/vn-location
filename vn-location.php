@@ -27,12 +27,15 @@ run();
 function v_uninstall_plugin(){
     global $wpdb;
     $tbl_Wards      = $wpdb->prefix . 'wards';
+    $tbl_Districts  = $wpdb->prefix . 'districts';
+    $tbl_Cities     = $wpdb->prefix . 'cities';
     $wpdb->query("DROP TABLE IF EXISTS $tbl_Wards");
+    $wpdb->query("DROP TABLE IF EXISTS $tbl_Districts");
+    $wpdb->query("DROP TABLE IF EXISTS $tbl_Cities");
 }
 
 function v_install_plugin(){
     global $wpdb;
-    
     $tbl_Ward       = $wpdb->prefix . 'wards';
     $tbl_Cities     = $wpdb->prefix . 'cities';
     $tbl_Districts  = $wpdb->prefix . 'districts';
