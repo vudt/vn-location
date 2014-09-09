@@ -19,9 +19,12 @@ settings_fields('vn-location');
 foreach($post_types as $type) {
     $post_type_obj = get_post_type_object($type);
     $checked = '';
-    if(in_array($type, $options)) {
-        $checked = 'checked="check"';
+    if($options){
+        if (in_array($type, $options)) {
+            $checked = 'checked="check"';
+        }
     }
+    
     echo '<div style="padding: 3px 0">';
     echo '<input type="checkbox" name="vn-types['. $type .']"  value="'. $type .'" '. $checked .' />';
     echo '<label>'. $post_type_obj->label .'</label>';
