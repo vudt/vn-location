@@ -112,7 +112,7 @@ class Meta_Box {
     public function add_meta_box_cb(){
         $args = array('action' => $_GET['action']);
         $post_types = get_option('vn-types');
-        if(count($post_types) > 0){
+        if($post_types){
             foreach($post_types as $slug) {
                 add_meta_box('v-location', 'Location', array($this, 'show_meta_box'), $slug, 'normal', 'low', $args);
             }
