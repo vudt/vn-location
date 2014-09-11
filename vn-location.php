@@ -82,15 +82,14 @@ function v_install_plugin(){
     }
     
     $query_wards        = file_get_contents(PATH_PLUGIN.'wards.txt');
-    $query_cities       = file_get_contents(PATH_PLUGIN.'cities.txt');
-    $query_districts    = file_get_contents(PATH_PLUGIN.'districts.txt');
-    
     $wpdb->query("
         INSERT INTO $tbl_Ward (`wardid`, `name`, `type`, `location`, `districtid`) VALUES $query_wards"
     );
+    $query_cities       = file_get_contents(PATH_PLUGIN.'cities.txt');
     $wpdb->query("
         INSERT INTO $tbl_Cities (`provinceid`, `name`, `type`) VALUES $query_cities"
     );
+    $query_districts    = file_get_contents(PATH_PLUGIN.'districts.txt');
     $wpdb->query("
         INSERT INTO $tbl_Districts (`districtid`, `name`, `type`, `location`, `provinceid`) VALUES $query_districts"
     );
