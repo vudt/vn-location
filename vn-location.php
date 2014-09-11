@@ -13,7 +13,7 @@ License: GPLv2 or later
 Text Domain: Vu Dang
 */
 
-define('PATH_PLUGIN', plugin_dir_url(__FILE__));
+define('DIR_PLUGIN', plugin_dir_url(__FILE__));
 require_once 'inc/meta-box.php';
 register_activation_hook(__FILE__, 'v_install_plugin');
 register_uninstall_hook(__FILE__, 'v_uninstall_plugin');
