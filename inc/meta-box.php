@@ -48,7 +48,7 @@ class Meta_Box {
     }
 
     public function vu_enqueue(){
-        wp_enqueue_script('ajax-script', PATH_PLUGIN.'js/common.js', array('jquery'));
+        wp_enqueue_script('ajax-script', DIR_PLUGIN.'js/common.js', array('jquery'));
         wp_localize_script('ajax-script', 'ajaxObj', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ));
     }
     
